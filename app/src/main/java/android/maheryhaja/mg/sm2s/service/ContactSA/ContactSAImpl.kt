@@ -1,7 +1,6 @@
 package android.maheryhaja.mg.sm2s.service.ContactSA
 
-import android.maheryhaja.mg.sm2s.Contact
-import android.net.Uri
+import android.maheryhaja.mg.sm2s.data.Contact
 import android.provider.ContactsContract
 import com.pushtorefresh.storio3.contentresolver.StorIOContentResolver
 import com.pushtorefresh.storio3.contentresolver.queries.Query

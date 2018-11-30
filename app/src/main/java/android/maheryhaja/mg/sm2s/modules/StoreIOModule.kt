@@ -1,11 +1,6 @@
 package android.maheryhaja.mg.sm2s.modules
 
-import android.content.ContentResolver
-import android.content.Context
-import android.maheryhaja.mg.sm2s.Contact
-import android.maheryhaja.mg.sm2s.ContactStorIOContentResolverDeleteResolver
-import android.maheryhaja.mg.sm2s.ContactStorIOContentResolverGetResolver
-import android.maheryhaja.mg.sm2s.ContactStorIOContentResolverPutResolver
+import android.maheryhaja.mg.sm2s.data.*
 import com.pushtorefresh.storio3.contentresolver.ContentResolverTypeMapping
 import com.pushtorefresh.storio3.contentresolver.StorIOContentResolver
 import com.pushtorefresh.storio3.contentresolver.impl.DefaultStorIOContentResolver
@@ -20,6 +15,12 @@ val StoreIOModule = module {
                             .putResolver(ContactStorIOContentResolverPutResolver())
                             .getResolver(ContactStorIOContentResolverGetResolver())
                             .deleteResolver(ContactStorIOContentResolverDeleteResolver())
+                            .build()
+                    )
+                    .addTypeMapping(MessageDto::class.java, ContentResolverTypeMapping.builder<MessageDto>()
+                            .putResolver(MessageDtoStorIOContentResolverPutResolver())
+                            .getResolver(MessageDtoStorIOContentResolverGetResolver())
+                            .deleteResolver(MessageDtoStorIOContentResolverDeleteResolver())
                             .build()
                     )
                     .build()

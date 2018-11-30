@@ -1,4 +1,4 @@
-package android.maheryhaja.mg.sm2s
+package android.maheryhaja.mg.sm2s.data
 
 import android.provider.ContactsContract
 import com.pushtorefresh.storio3.contentresolver.annotations.StorIOContentResolverColumn

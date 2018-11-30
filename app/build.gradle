@@ -10,7 +10,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "android.maheryhaja.mg.sm2s"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -55,6 +55,13 @@ dependencies {
     implementation 'com.pushtorefresh.storio3:content-resolver-annotations:3.0.0'
 
     kapt 'com.pushtorefresh.storio3:content-resolver-annotations-processor:3.0.0'
+
+//    stetho
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
+    implementation 'me.everything:providers-stetho:1.0.1'
+    implementation 'me.everything:providers-android:1.0.1'
+
 
 
     def rxandroid_version="2.0.1"

@@ -3,6 +3,7 @@ package android.maheryhaja.mg.sm2s
 import android.Manifest
 import android.maheryhaja.mg.sm2s.common.AppLanguage
 import android.maheryhaja.mg.sm2s.service.ContactSA.ContactSA
+import android.maheryhaja.mg.sm2s.service.MessageSA.MessageSA
 import android.maheryhaja.mg.sm2s.service.SimpleTestSA
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ class SplashActivity : LocalizedActivity("default_lang"), PermissionListener {
 
     val testSA: SimpleTestSA by inject()
     val contactSA: ContactSA by inject()
+    val messageSA: MessageSA by inject()
 
     //viewmodels
     val splashActivityVM: SplashActivityVM by viewModel()
@@ -44,7 +46,13 @@ class SplashActivity : LocalizedActivity("default_lang"), PermissionListener {
         enbtn.setOnClickListener{ setAppLanguage(AppLanguage.ENGLISH)}
 
 
-
+        messageSA
+                .getMessageFlowable()
+                .subscribe {
+                    it.forEach {
+                        Log.d("test-msg", it.toString())
+                    }
+                }
 
 
     }
